@@ -1,0 +1,100 @@
+.integrations-section {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 6rem 0;
+}
+
+.integrations-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Glowing text effect */
+  text-shadow: 0 0 15px rgba(239, 68, 68, 0.4), 0 0 30px rgba(239, 68, 68, 0.2);
+}
+
+.integrations-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  gap: 5rem;
+  height: 160px;
+}
+
+.integration-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0.5;
+  cursor: default;
+  transform-origin: center bottom;
+  position: relative;
+  animation: auto-pop-item 8s ease-in-out infinite;
+}
+
+.integration-image {
+  height: 90px;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  animation: auto-pop-image 8s ease-in-out infinite;
+}
+
+.integration-item:nth-child(2), .integration-item:nth-child(2) .integration-image { animation-delay: 0s; }
+.integration-item:nth-child(3), .integration-item:nth-child(3) .integration-image { animation-delay: 2s; }
+.integration-item:nth-child(4), .integration-item:nth-child(4) .integration-image { animation-delay: 4s; }
+.integration-item:nth-child(5), .integration-item:nth-child(5) .integration-image { animation-delay: 6s; }
+
+.integration-item.active-integration {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  z-index: 10 !important;
+}
+
+.integration-image.active-integration {
+  animation: none !important;
+  filter: grayscale(0%) url(#solid-white-outline) !important;
+}
+
+@keyframes auto-pop-item {
+  0%, 25%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+    z-index: 1;
+  }
+  10%, 15% {
+    opacity: 1;
+    transform: scale(1.5);
+    z-index: 10;
+  }
+}
+
+@keyframes auto-pop-image {
+  0%, 25%, 100% {
+    filter: grayscale(100%);
+  }
+  10%, 15% {
+    /* Uses the SVG feMorphology filter for a perfectly uniform, mathematically exact outline */
+    filter: grayscale(0%) url(#solid-white-outline);
+  }
+}
+
+@media (max-width: 768px) {
+  .integrations-grid {
+    gap: 3rem;
+  }
+  .integrations-title {
+    font-size: 1.5rem;
+  }
+  .integration-image {
+    height: 40px;
+  }
+}

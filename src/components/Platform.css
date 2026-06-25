@@ -1,0 +1,164 @@
+.platform-section {
+  position: relative;
+  background: transparent;
+}
+
+.platform-header {
+  margin-bottom: 5rem;
+}
+
+.platform-header .section-title {
+  color: var(--accent-red);
+}
+
+.comparison-table-container {
+  margin-top: 4rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.mirage-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.mirage-comparison-table th,
+.mirage-comparison-table td {
+  padding: 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 1.05rem;
+}
+
+.mirage-comparison-table th {
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 2rem;
+}
+
+.col-traditional {
+  color: #94a3b8;
+  width: 35%;
+}
+
+.col-mirage {
+  width: 40%;
+}
+
+.row-title {
+  font-weight: 700;
+  color: #f8fafc;
+  width: 25%;
+}
+
+.mirage-comparison-table td:not(.row-title):not(.highlight-cell) {
+  color: #94a3b8;
+}
+
+.highlight-cell {
+  background: rgba(239, 68, 68, 0.05);
+  border-left: 2px solid var(--accent-red);
+  color: #f8fafc;
+}
+
+.highlight-cell strong {
+  color: var(--accent-red);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .comparison-table-container {
+    padding: 1rem;
+  }
+  .mirage-comparison-table th,
+  .mirage-comparison-table td {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+.platform-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.platform-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .platform-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+  
+  .platform-row.reverse .platform-text {
+    order: 2;
+  }
+  .platform-row.reverse .platform-image-placeholder {
+    order: 1;
+  }
+}
+
+.platform-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.platform-icon-badge.blue { background: var(--accent-blue-light); color: var(--accent-blue); }
+.platform-icon-badge.purple { background: var(--accent-purple-light); color: var(--accent-purple); }
+.platform-icon-badge.red { background: var(--accent-red-light); color: var(--accent-red); }
+
+.platform-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-red);
+}
+
+.platform-text p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.platform-link {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.platform-image-placeholder {
+  aspect-ratio: 4/3;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.abstract-cloud, .abstract-identity, .abstract-intel {
+  width: 60%;
+  height: 60%;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--bg-primary), var(--border-color));
+  opacity: 0.5;
+}

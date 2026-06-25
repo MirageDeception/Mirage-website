@@ -1,0 +1,103 @@
+.roadmap-section {
+  background: white;
+  color: #0f172a;
+  border-top: 1px solid var(--border-color);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-item.completed,
+.timeline-item:hover {
+  opacity: 1;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.status-icon {
+  background: white;
+  color: #0f172a;
+  border-radius: 50%;
+  color: #475569;
+  position: relative;
+  z-index: 2;
+  border: 2px solid white;
+}
+
+.completed .status-icon {
+  color: var(--accent-blue);
+}
+
+.timeline-item:hover .status-icon {
+  color: var(--accent-purple);
+}
+
+.timeline-line {
+  position: absolute;
+  top: 24px;
+  bottom: -2rem;
+  width: 2px;
+  background: var(--border-color);
+  z-index: 1;
+}
+
+.completed .timeline-line {
+  background: var(--accent-blue);
+}
+
+.timeline-item:hover .timeline-line {
+  background: linear-gradient(180deg, var(--accent-purple), var(--border-color));
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 1.5rem;
+  margin-top: -0.5rem;
+  position: relative;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 1.25rem;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  transform: rotate(45deg);
+}
+
+.timeline-content h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: inherit;
+  font-weight: 700;
+}
+
+.completed .timeline-content h3 {
+  color: var(--accent-blue);
+}

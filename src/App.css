@@ -1,0 +1,6 @@
+/* Component specific styles will go here or in modules */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

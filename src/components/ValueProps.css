@@ -1,0 +1,108 @@
+.values-section {
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.values-wave-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.values-wave-container.bottom-right {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+
+.values-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 4px solid rgba(220, 38, 38, 0.4);
+  background: rgba(220, 38, 38, 0.03);
+  box-shadow: 0 0 60px rgba(220, 38, 38, 0.2) inset, 0 0 60px rgba(220, 38, 38, 0.2);
+  animation: radar-wave 12s infinite linear;
+}
+
+.values-wave:nth-child(1) { animation-delay: 0s; }
+.values-wave:nth-child(2) { animation-delay: 3s; }
+.values-wave:nth-child(3) { animation-delay: 6s; }
+.values-wave:nth-child(4) { animation-delay: 9s; }
+
+@keyframes radar-wave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 200vw;
+    height: 200vw;
+    opacity: 0;
+  }
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value-card {
+  padding: 3rem 2rem;
+  background: white;
+  color: #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+  border-top: 4px solid transparent;
+  border-radius: 24px;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-top-color: var(--accent-red);
+}
+
+.value-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #f1f5f9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+  background: var(--accent-red-light);
+  color: var(--accent-red);
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.value-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

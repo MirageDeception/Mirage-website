@@ -1,0 +1,166 @@
+.hero-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: calc(90vh - 80px);
+  /* Fill the screen to allow centering */
+}
+
+.hero-main-area {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 150px;
+}
+
+.edge-alarm {
+  position: absolute;
+  top: 0;
+  width: 25vw;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  /* Static edge gradient, no animation */
+}
+
+.edge-alarm-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.8) 0%, transparent 100%);
+}
+
+.edge-alarm-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(239, 68, 68, 0.8) 0%, transparent 100%);
+}
+
+.hero-layout-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  z-index: 2;
+  /* Sit above the background animation */
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  /* Tighter spacing to bring logo down and text up */
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.hero-logo {
+  max-width: 54rem;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  display: block;
+  animation: pulse-glow 4s ease-in-out infinite alternate;
+}
+
+.hero-tagline {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 4px;
+}
+
+.tagline-word {
+  color: var(--text-main);
+  animation: neon-pulse 3s infinite;
+}
+
+.word-1 {
+  animation-delay: 0s;
+}
+
+.word-2 {
+  animation-delay: 1s;
+}
+
+.word-3 {
+  animation-delay: 2s;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    color: var(--text-main);
+    text-shadow: none;
+  }
+  50% {
+    color: var(--accent-red);
+    text-shadow: 0 0 15px var(--accent-red), 0 0 30px var(--accent-red);
+  }
+}
+
+/* Ensure it scales down cleanly on mobile screens */
+@media (max-width: 768px) {
+  .hero-logo {
+    max-width: 90%;
+  }
+}
+
+/* Unused Badge CSS removed */
+
+@keyframes pulseBlue {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.hero-subtitle {
+  display: flex;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  position: relative;
+  margin: 1rem auto 2rem auto;
+  text-align: center;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

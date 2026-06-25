@@ -1,0 +1,125 @@
+.architecture-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.tier {
+  width: 100%;
+  padding: 2.5rem;
+  border-top: 4px solid;
+  position: relative;
+}
+
+.control-plane {
+  border-top-color: var(--accent-blue);
+  background: linear-gradient(180deg, var(--accent-blue-light), transparent);
+}
+
+.data-plane {
+  border-top-color: var(--accent-purple);
+  background: linear-gradient(180deg, var(--accent-purple-light), transparent);
+}
+
+.tier-badge {
+  position: absolute;
+  top: -12px;
+  right: 2rem;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.control-plane .tier-badge {
+  color: var(--accent-blue);
+}
+
+.data-plane .tier-badge {
+  color: var(--accent-purple);
+}
+
+.tier h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.tier-content {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.arch-node {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: var(--shadow-sm);
+}
+
+.target-node {
+  border-color: rgba(124, 58, 237, 0.3);
+  background: var(--bg-primary);
+}
+
+.target-node:hover {
+  background: var(--accent-purple-light);
+  border-color: var(--accent-purple);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+}
+
+.empty-node {
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border-color);
+  color: #475569;
+}
+
+.mesh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.connection-lines {
+  display: flex;
+  gap: 4rem;
+  height: 4rem;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+  position: relative;
+  overflow: hidden;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  filter: blur(2px);
+  animation: dataFlow 2s linear infinite;
+}
+
+@keyframes dataFlow {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(200%); opacity: 0; }
+}

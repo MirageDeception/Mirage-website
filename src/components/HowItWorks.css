@@ -1,0 +1,327 @@
+.how-it-works-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.how-it-works-section .section-title {
+  font-size: 3.5rem;
+  color: var(--accent-red);
+}
+
+.process-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .process-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.process-step {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+
+.process-step.active {
+  background: white;
+  color: #0f172a;
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-md);
+  opacity: 1;
+}
+
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.process-step:nth-child(1).active .step-number,
+.process-step:nth-child(2).active .step-number,
+.process-step:nth-child(3).active .step-number { 
+  color: var(--accent-red); 
+}
+
+.process-step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.process-step.active h3 {
+  color: var(--accent-red);
+}
+
+.process-step p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.process-step.active p {
+  color: #000000;
+}
+
+/* Animation Re-used from previous Hero */
+.process-visual {
+  position: relative;
+  height: 500px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  /* Force white background for visibility */
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  /* Light border */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* Light shadow */
+}
+
+.animation-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.network-grid {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #0f172a;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.node-blue {
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.node-red {
+  color: #ef4444;
+  border: 2px solid #ef4444;
+}
+
+/* Node positions - Blue */
+.node-0 {
+  top: 20%;
+  left: 20%;
+}
+
+.node-1 {
+  top: 30%;
+  left: 50%;
+}
+
+.node-2 {
+  top: 25%;
+  left: 80%;
+}
+
+.node-3 {
+  top: 60%;
+  left: 30%;
+}
+
+.node-4 {
+  top: 70%;
+  left: 60%;
+}
+
+.node-5 {
+  top: 75%;
+  left: 80%;
+}
+
+.node-6 {
+  top: 15%;
+  left: 40%;
+}
+
+.node-7 {
+  top: 45%;
+  left: 45%;
+}
+
+.node-8 {
+  top: 45%;
+  left: 85%;
+}
+
+.node-9 {
+  top: 85%;
+  left: 40%;
+}
+
+.node-10 {
+  top: 90%;
+  left: 80%;
+}
+
+.node-11 {
+  top: 10%;
+  left: 50%;
+}
+
+/* Node positions - Red decoys */
+.node-r-0 {
+  top: 40%;
+  left: 30%;
+}
+
+.node-r-1 {
+  top: 25%;
+  left: 20%;
+}
+
+.node-r-2 {
+  top: 35%;
+  left: 65%;
+}
+
+.node-r-3 {
+  top: 85%;
+  left: 20%;
+}
+
+.node-r-4 {
+  top: 90%;
+  left: 60%;
+}
+
+.node-r-5 {
+  top: 60%;
+  left: 15%;
+}
+
+.node-r-6 {
+  top: 75%;
+  left: 25%;
+}
+
+.node-r-7 {
+  top: 55%;
+  left: 85%;
+}
+
+.connections-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.blue-lines line,
+.red-lines line {
+  stroke-width: 2;
+  transition: all 1s ease;
+}
+
+.blue-lines line {
+  stroke: rgba(59, 130, 246, 0.4);
+}
+
+.red-lines line {
+  stroke: rgba(239, 68, 68, 0.4);
+}
+
+/* Animation Phases */
+/* Phase 0: Blue only */
+.phase-0 .node-red {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.phase-0 .red-lines line {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.phase-0 .blue-lines line {
+  opacity: 1;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.phase-0 .node-blue {
+  color: #3b82f6;
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+/* Phase 1: Blue + Red (Deception) */
+.phase-1 .node-red {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.phase-1 .red-lines line {
+  opacity: 1;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.phase-1 .blue-lines line {
+  opacity: 1;
+}
+
+.phase-1 .node-blue {
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Phase 2: Perceived Environment (Purple + No real connections) */
+.phase-2 .node-red {
+  color: #7c3aed;
+  border-color: #7c3aed;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.phase-2 .node-blue {
+  color: #7c3aed;
+  border-color: #7c3aed;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.phase-2 .blue-lines line {
+  opacity: 0;
+}
+
+.phase-2 .red-lines line {
+  opacity: 0;
+}

@@ -1,0 +1,64 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Convert the black text in the image to pure white for the dark theme */
+  filter: brightness(0) invert(1);
+}
+
+.logo-svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Alarm pulse animation for the A */
+@keyframes alarm-pulse {
+  0% { filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.4)); }
+  50% { filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.9)); }
+  100% { filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.4)); }
+}
+
+.alarm-a {
+  transform-origin: 405px 98px;
+  animation: alarm-pulse 4s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes svg-ring-expand {
+  0% { r: 10px; opacity: 1; stroke-width: 3px; }
+  100% { r: 50px; opacity: 0; stroke-width: 0px; }
+}
+
+.svg-ring {
+  transform-origin: 405px 98px;
+}
+
+.ring-1 {
+  animation: svg-ring-expand 4s infinite cubic-bezier(0.16, 1, 0.3, 1);
+  animation-delay: 0s;
+}
+
+.ring-2 {
+  animation: svg-ring-expand 4s infinite cubic-bezier(0.16, 1, 0.3, 1);
+  animation-delay: 0.8s;
+}
+
+.ring-3 {
+  animation: svg-ring-expand 4s infinite cubic-bezier(0.16, 1, 0.3, 1);
+  animation-delay: 1.6s;
+}

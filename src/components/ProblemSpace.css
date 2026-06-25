@@ -1,0 +1,84 @@
+.problem-section {
+  position: relative;
+  padding: 6rem 0;
+}
+
+.problem-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-top: 6rem;
+}
+
+.zigzag-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .zigzag-row {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+  
+  .zigzag-row.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .zigzag-text, .zigzag-image-container {
+    flex: 1;
+  }
+}
+
+.zigzag-text {
+  max-width: 600px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.icon-warning {
+  color: #ef4444;
+}
+
+.zigzag-desc {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.zigzag-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.zigzag-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+.zigzag-image-container:hover .zigzag-image {
+  transform: scale(1.05);
+}
