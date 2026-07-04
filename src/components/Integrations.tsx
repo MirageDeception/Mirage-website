@@ -21,19 +21,19 @@ export function Integrations() {
         
         <div className="integrations-grid">
           <div className="integration-item active-integration">
-            <img src="/aws-logo.webp" alt="AWS" className="integration-image active-integration" />
+            <img src={`${import.meta.env.BASE_URL}aws-logo.webp`} alt="AWS" className="integration-image active-integration" />
           </div>
           <div className="integration-item">
-            <img src="/azure.png" alt="Azure" className="integration-image" />
+            <img src={`${import.meta.env.BASE_URL}azure.png`} alt="Azure" className="integration-image" />
           </div>
           <div className="integration-item">
-            <img src="/google-cloud.png" alt="Google Cloud" className="integration-image" />
+            <img src={`${import.meta.env.BASE_URL}google-cloud.png`} alt="Google Cloud" className="integration-image" />
           </div>
           <div className="integration-item">
-            <img src="/ms-ad.png" alt="Active Directory" className="integration-image" />
+            <img src={`${import.meta.env.BASE_URL}ms-ad.png`} alt="Active Directory" className="integration-image" />
           </div>
           <div className="integration-item">
-            <img src="/kubernetes.png" alt="Kubernetes" className="integration-image" />
+            <img src={`${import.meta.env.BASE_URL}kubernetes.png`} alt="Kubernetes" className="integration-image" />
           </div>
         </div>
       </div>

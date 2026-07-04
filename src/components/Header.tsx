@@ -30,7 +30,7 @@ export function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation"
         >
-          <img src="/3-line-icon.png" alt="Menu" style={{ width: '28px', height: '28px', filter: 'brightness(0) invert(1)' }} />
+          <img src={`${import.meta.env.BASE_URL}3-line-icon.png`} alt="Menu" style={{ width: '28px', height: '28px', filter: 'brightness(0) invert(1)' }} />
         </button>
 
         <div className={`header-content ${isMenuOpen ? 'is-open' : ''}`}>

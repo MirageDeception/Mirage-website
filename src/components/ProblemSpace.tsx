@@ -39,7 +39,7 @@ export function ProblemSpace() {
               </p>
             </div>
             <div className="zigzag-image-container glass-panel">
-              <img src="/cloud-network-breach.png" alt="Cloud Network Breach Diagram" className="zigzag-image" />
+              <img src={`${import.meta.env.BASE_URL}cloud-network-breach.png`} alt="Cloud Network Breach Diagram" className="zigzag-image" />
             </div>
           </div>
 

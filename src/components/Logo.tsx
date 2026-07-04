@@ -8,7 +8,7 @@ export function Logo({ className = '' }: LogoProps) {
   return (
     <div className={`logo-container ${className}`}>
       <div className="logo-image-wrapper">
-        <img src="/logo3.png" alt="MIRAGE Cloud Deception" className="logo-img" />
+        <img src={`${import.meta.env.BASE_URL}logo3.png`} alt="MIRAGE Cloud Deception" className="logo-img" />
 
         {/* Absolutely positioned SVG overlay over the entire image so animations don't clip! */}
         <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" className="logo-svg-overlay">

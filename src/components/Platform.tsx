@@ -25,7 +25,7 @@ export function Platform() {
               <a href="#" className="platform-link">Explore Cloud Packs &rarr;</a>
             </div>
             <div className="platform-image-placeholder">
-              <img src="/cloud-sec.png" alt="Cloud Security" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={`${import.meta.env.BASE_URL}cloud-sec.png`} alt="Cloud Security" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
 
@@ -41,7 +41,7 @@ export function Platform() {
               <a href="#" className="platform-link">Explore Identity Traps &rarr;</a>
             </div>
             <div className="platform-image-placeholder">
-              <img src="/ad.png" alt="Identity Protection" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={`${import.meta.env.BASE_URL}ad.png`} alt="Identity Protection" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export function Platform() {
               <a href="#" className="platform-link">Explore The Control Plane &rarr;</a>
             </div>
             <div className="platform-image-placeholder">
-              <img src="/ti.png" alt="Threat Intelligence" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={`${import.meta.env.BASE_URL}ti.png`} alt="Threat Intelligence" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </div>
