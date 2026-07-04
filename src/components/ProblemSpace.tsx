@@ -3,7 +3,7 @@ import './ProblemSpace.css';
 
 export function ProblemSpace() {
   return (
-    <section className="problem-section section">
+    <section id="problem" className="problem-section section">
       <div className="container">
         <h2 className="section-title text-center" style={{ marginTop: '4rem', paddingBottom: '4rem' }}>
           The <span className="text-gradient">Drawbacks</span> of Traditional Security

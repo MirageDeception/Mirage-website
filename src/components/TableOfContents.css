@@ -1,0 +1,105 @@
+.toc-container {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -280px; /* Hidden by default */
+  width: 280px;
+  height: auto;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0 16px 16px 0;
+  z-index: 1000; 
+  transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.toc-container.is-open {
+  left: 0;
+}
+
+.toc-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: -36px; /* Sticks out to the right */
+  transform: translateY(-50%);
+  width: 36px;
+  height: 64px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-main);
+  box-shadow: 6px 0 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, color 0.2s;
+}
+
+.toc-toggle-btn:hover {
+  background: var(--accent-red);
+  color: white;
+}
+
+.toc-content {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.toc-header {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.toc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.toc-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toc-link:hover {
+  color: var(--text-main);
+  transform: translateX(4px);
+}
+
+.toc-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  background: rgba(255, 60, 60, 0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* Hide entirely on mobile */
+@media (max-width: 768px) {
+  .toc-container {
+    display: none;
+  }
+}

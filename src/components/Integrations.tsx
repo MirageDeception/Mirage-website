@@ -2,7 +2,7 @@ import './Integrations.css';
 
 export function Integrations() {
   return (
-    <section className="integrations-section section">
+    <section id="integrations" className="integrations-section section">
       <svg style={{ width: 0, height: 0, position: 'absolute' }} aria-hidden="true" focusable="false">
         <filter id="solid-white-outline">
           <feMorphology in="SourceAlpha" result="dilated" operator="dilate" radius="2" />

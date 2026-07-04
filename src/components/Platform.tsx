@@ -2,7 +2,7 @@ import './Platform.css';
 
 export function Platform() {
   return (
-    <section className="platform-section section">
+    <section id="platform" className="platform-section section">
       <div className="container">
         <div className="platform-header text-center">
           <h2 className="section-title">How <span className="text-gradient">MIRAGE</span> is Different</h2>

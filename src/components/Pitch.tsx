@@ -3,7 +3,7 @@ import './Pitch.css';
 
 export function Pitch() {
   return (
-    <section className="pitch-section section">
+    <section id="pitch" className="pitch-section section">
       <div className="container">
         <div className="pitch-box glass-panel">
           <div className="pitch-content">

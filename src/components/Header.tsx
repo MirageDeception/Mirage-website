@@ -1,8 +1,22 @@
 import { useState } from 'react';
+import { useGoogleLogin } from '@react-oauth/google';
 import './Header.css';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      console.log('Login Success:', tokenResponse);
+      setIsLoggedIn(true);
+      setIsMenuOpen(false);
+    },
+    onError: (error) => {
+      console.error('Login Failed:', error);
+      alert('Login Failed. Please make sure you have added a valid Google Client ID to your .env file.');
+    },
+  });
 
   return (
     <header className="site-header">
@@ -21,13 +35,15 @@ export function Header() {
 
         <div className={`header-content ${isMenuOpen ? 'is-open' : ''}`}>
           <nav className="header-nav">
-            <a href="#platform" className="nav-link" onClick={() => setIsMenuOpen(false)}>Platform</a>
-            <a href="#how-it-works" className="nav-link" onClick={() => setIsMenuOpen(false)}>How it Works</a>
-            <a href="#architecture" className="nav-link" onClick={() => setIsMenuOpen(false)}>Architecture</a>
+            <a href="#" className="nav-link" onClick={() => setIsMenuOpen(false)}>Blogs</a>
+            <a href="#" className="nav-link" onClick={() => setIsMenuOpen(false)}>Meet Team</a>
           </nav>
           <div className="header-actions">
-            <button className="btn btn-secondary btn-sm" onClick={() => setIsMenuOpen(false)}>Log In</button>
-            <button className="btn btn-primary btn-sm" onClick={() => setIsMenuOpen(false)}>Get a Demo</button>
+            {isLoggedIn ? (
+              <button className="btn btn-primary btn-sm" onClick={() => setIsLoggedIn(false)}>Sign Out</button>
+            ) : (
+              <button className="btn btn-secondary btn-sm" onClick={() => login()}>Log In with Google</button>
+            )}
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { HowItWorks } from './components/HowItWorks';
 import { Pitch } from './components/Pitch';
 import { Reveal } from './components/Reveal';
 import { Loader } from './components/Loader';
+import { TableOfContents } from './components/TableOfContents';
 import { useEffect } from 'react';
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <Loader />
+      <TableOfContents />
       <Header />
       <Hero />
       <Reveal><ProblemSpace /></Reveal>

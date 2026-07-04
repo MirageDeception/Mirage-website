@@ -4,7 +4,7 @@ import './Hero.css';
 
 export function Hero() {
   return (
-    <section className="hero-section">
+    <section id="home" className="hero-section">
 
       <div className="hero-main-area">
         <div className="edge-alarm edge-alarm-left"></div>
@@ -22,7 +22,7 @@ export function Hero() {
             </div>
 
             <p className="hero-subtitle mx-auto">
-              MIRAGE is an emerging proactive defense platform being developed to deliver a dynamic multi-cloud deception mesh. It aims to break AI attack automation, detect lateral movement, and reduce dwell time.
+              MIRAGE is an open-source proactive defense platform being developed to deliver a dynamic multi-cloud deception mesh. It aims to break AI attack automation, detect lateral movement, and reduce dwell time.
             </p>
 
             <div className="hero-cta-group justify-center">
