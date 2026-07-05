@@ -25,7 +25,7 @@ export function TableOfContents() {
             <span className="toc-num">2</span> The Problem
           </a>
           <a href="#platform" className="toc-link" onClick={() => setIsOpen(false)}>
-            <span className="toc-num">3</span> Product Overview
+            <span className="toc-num">3</span> Tool Overview
           </a>
           <a href="#how-it-works" className="toc-link" onClick={() => setIsOpen(false)}>
             <span className="toc-num">4</span> How it Works

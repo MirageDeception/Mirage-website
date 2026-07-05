@@ -26,11 +26,11 @@ export function Hero() {
             </p>
 
             <div className="hero-cta-group justify-center">
-              <a href="https://github.com/arham7006/Project-Mirage" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textDecoration: 'none' }}>
+              <a href="https://github.com/MirageDeception/Mirage-OS" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textDecoration: 'none' }}>
                 <Shield size={20} />
                 Deploy the Mesh
               </a>
-              <a href="https://github.com/arham7006/Project-Mirage" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textDecoration: 'none' }}>
+              <a href="https://github.com/MirageDeception/Mirage-OS" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textDecoration: 'none' }}>
                 <Terminal size={20} />
                 Contribute on GitHub
               </a>
